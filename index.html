@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>
+	    Pizza Shop 2.0 Form
+		</title>
+		<style>
+		table{
+		background:#fefbd8 url("pizza1.jpg") no-repeat fixed top;
+		}		
+		</style>
+	</head>
+	<body>
+	<form name="pizzaForm" onsubmit="return validateForm()" method="post">
+	<table border="2">
+		<tr>
+		<th  colspan="2">Pizza Shop 2.0</th> 
+		</tr>
+		<tr><td>Name</td><td><input type="text" name="PizzaName" size="30"/></td></tr>
+	
+		<tr><td>Pizza Topping</td><td><input type="radio" value="Supreme" name="toppings"/>Supreme<br/>
+		<input type="radio" value="Vegetarian" name="toppings"/>Vegetarian<br/>
+		<input type="radio" value="Hawaiian" name="toppings"/>Hawaiian</td></tr>
+	
+		<tr><td>Pizza Sauce</td><td><select name="Sauce" size="1"/>
+		<option>Tomato</option>
+		<option>White Garlic</option>
+		<option>Pesto</option>
+		<option>BBQ</option>
+		</select></td></tr>
+		
+		<tr><td>Optional Extras</td><td><input type="checkbox" Value="extraCheese" name="extras"/>Extra Cheese<br/>
+		<input type="checkbox" value="GlutenFreeBase" name="extras"/>Gluten Free Base
+		</td></tr>
+		
+		<tr><td colspan="2"><label for="deliveryIns">Delivery Instructions:</label><br/><textarea id="deliveryIns" name="deliveryIns" rows="4" cols="75"></textarea></td></tr>
+	
+	
+	
+		<tr><td colspan="2"><input type="submit" name="sendOrder" value="Send my Order"/></td></tr>
+
+	</table>
+	</form>
+	<script>
+	function validateForm() {
+	 x = document.pizzaForm.PizzaName.value;
+	 y = document.pizzaForm.toppings;
+	 var z = document.forms["pizzaForm"]["Sauce"].selectedIndex;
+	 a = document.pizzaForm.extras;
+	 b = document.pizzaForm.deliveryIns.value;
+	 
+	 if (test(x))
+	 {
+	 if (test1(y))
+	 {
+	 if (test2(z))
+	 {
+	 if (test3(a))
+	 {
+	 if (test4(b))
+	 {
+	 return true;
+	 }}}}}
+	 return false;
+	}
+	function test(x)
+	{
+	 if (x.length==0) {
+	 alert("Pizza Name must be filled out");
+	 return false;
+	 }
+	 return true;
+	 }
+	function test1(y)
+	{
+	for(var i = 0; i < y.length; i++)
+	 {
+	 if(y[i].checked)
+	 {
+	 return true;
+	 }
+	 }
+	alert ( "Please choose the Pizza topping: Supreme or Vegetarian or Hawaiian" );
+	return false;
+	}	 
+	 function test2(z)
+	{
+	if(z > 0)
+	{
+	 return true;
+	 }
+	else
+	{
+	 alert('Please select a sauce from the list');
+	 return false;
+	}
+	}
+	function test3(a)
+	{
+	for(var i = 0; i < a.length; i++)
+	 {
+	 if(a[i].checked)
+	 {
+	 return true;
+	 }
+	 }
+	alert ( "Please choose the optional extras");
+	return false;
+	}
+	function test4(b)
+	{
+	 if (b.length==0) {
+	 alert("Delivery instructions must be filled out");
+	 return false;
+	 }
+	 return true;
+	 }
+	</script>
+	<h4><br/><br/><em>This webpage is created by <strong>Kamesh.R</strong></em></h4>
+	</body>
+</html>
+	
+	
